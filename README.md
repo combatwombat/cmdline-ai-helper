@@ -1,4 +1,4 @@
-Generates command line command from your description. Lets you edit and execute it.
+Generates command line commands from your description. Lets you edit and execute it.
 
 # Installation
 

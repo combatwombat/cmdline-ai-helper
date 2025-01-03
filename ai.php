@@ -232,7 +232,7 @@ class AI {
         $prompt = implode(' ', $processedArgs);
         $command = $this->callLLM($this->getPrompt($prompt));
 
-        $promptText = "Edit command and press Enter to execute, or ESC to cancel:\n";
+        $promptText = "\nEdit command and press Enter to execute, or ESC to cancel:\n";
         echo $promptText;
 
         // Enable raw input mode
