@@ -324,32 +324,6 @@ class AI {
     }
 }
 
-// Create shell completion script
-if (isset($argv[1]) && $argv[1] === '--install-completion') {
-    $completionScript = '
-# AI command completion
-_ai_completion() {
-    local cur prev
-    COMPREPLY=()
-    cur="${COMP_WORDS[COMP_CWORD]}"
-    prev="${COMP_WORDS[COMP_CWORD-1]}"
-
-    # File completion for arguments containing / or starting with .
-    if [[ $cur == */* || $cur == .* ]]; then
-        COMPREPLY=( $(compgen -f -- "$cur") )
-        return 0
-    fi
-}
-complete -F _ai_completion ai
-';
-
-    $completionPath = $_SERVER['HOME'] . '/.ai_completion';
-    file_put_contents($completionPath, $completionScript);
-    echo "Added completion script to {$completionPath}\n";
-    echo "Add this line to your ~/.bashrc or ~/.zshrc:\n";
-    echo "source ~/.ai_completion\n";
-    exit(0);
-}
 
 // Main execution
 try {
@@ -357,7 +331,6 @@ try {
     $args = array_slice($argv, 1);
     if (empty($args)) {
         echo "Usage: ai <your command description>\n";
-        echo "       ai --install-completion (to install shell completion)\n";
         exit(1);
     }
     exit($ai->run($args));
