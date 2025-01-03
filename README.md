@@ -7,7 +7,7 @@
 3. Optionally add an alias to your `.bashrc` or `.bash_profile`
 
 ```
-alias ai="php ~/Dev/apps/php-cmdline-ai/ai.php"
+alias ai="php path/to/your/ai.php"
 ```
 
 When it's first called, it creates a config file in `~/.php-cmdline-ai.config.json`. Edit this with your API keys and set your default provider and model. It supports Anthropic, OpenAI, Google and local ollama.
