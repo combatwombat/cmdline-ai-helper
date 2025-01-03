@@ -21,3 +21,5 @@ $ ai description of your command
 ```
 
 Press enter, wait. Then edit the resulting command, press Enter to execute, or ESC to cancel.
+
+Examples: https://hachyderm.io/@combatwombat/113765663832357137
