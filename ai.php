@@ -58,11 +58,12 @@ class AI {
         $this->config = json_decode(file_get_contents($this->configPath), true);
     }
 
+    // In your getPrompt() method, add a hint about forcing color output
     private function getPrompt($userInput) {
-        $osSpecificPrompt = match($this->osType) {
-            'macos' => "Convert the following request into a macOS terminal command.",
+        $osSpecificPrompt = match ($this->osType) {
+            'macos' => "Convert the following request into a macOS terminal command. If using lolcat, add -f flag to force color.",
             'windows' => "Convert the following request into a Windows CMD or PowerShell command.",
-            'linux' => "Convert the following request into a Linux shell command."
+            'linux' => "Convert the following request into a Linux shell command. If using lolcat, add -f flag to force color."
         };
 
         return "{$osSpecificPrompt} Return only the command to be executed, nothing else, no markdown or prose. Request: {$userInput}";
@@ -319,7 +320,10 @@ class AI {
             $input = $command;
         }
 
-        system($input, $returnVal);
+        // Replace the passthru line with this:
+        $escapedInput = escapeshellarg($input);
+        passthru("TERM=xterm-256color bash -c $escapedInput", $returnVal);
+
         return $returnVal;
     }
 }
