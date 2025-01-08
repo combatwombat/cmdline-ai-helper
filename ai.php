@@ -61,9 +61,9 @@ class AI {
     // In your getPrompt() method, add a hint about forcing color output
     private function getPrompt($userInput) {
         $osSpecificPrompt = match ($this->osType) {
-            'macos' => "Convert the following request into a macOS terminal command. If using lolcat, add -f flag to force color.",
+            'macos' => "Convert the following request into a macOS terminal command. Only add the lolcat command if something colorful, fun or lolcat directly is requested. If so, add the -f option to lolcat.",
             'windows' => "Convert the following request into a Windows CMD or PowerShell command.",
-            'linux' => "Convert the following request into a Linux shell command. If using lolcat, add -f flag to force color."
+            'linux' => "Convert the following request into a Linux shell command. Only add the lolcat command if something colorful, fun or lolcat directly is requested. If so, add the -f option to lolcat."
         };
 
         return "{$osSpecificPrompt} Return only the command to be executed, nothing else, no markdown or prose. Request: {$userInput}";
