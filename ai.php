@@ -61,7 +61,7 @@ class AI {
     // In your getPrompt() method, add a hint about forcing color output
     private function getPrompt($userInput) {
         $osSpecificPrompt = match ($this->osType) {
-            'macos' => "Convert the following request into a macOS terminal command. Only add the lolcat command if something colorful, fun or lolcat directly is requested. If so, add the -f option to lolcat.",
+            'macos' => "Convert the following request into a macOS terminal command. Use macOS-compatible syntax (avoid bash-specific features like \${var,,} for lowercase conversion). Only add the lolcat command if something colorful, fun or lolcat directly is requested. If so, add the -f option to lolcat.",
             'windows' => "Convert the following request into a Windows CMD or PowerShell command.",
             'linux' => "Convert the following request into a Linux shell command. Only add the lolcat command if something colorful, fun or lolcat directly is requested. If so, add the -f option to lolcat."
         };
