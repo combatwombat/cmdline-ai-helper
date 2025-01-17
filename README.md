@@ -2,15 +2,14 @@ Generates command line commands from your description. Lets you edit and execute
 
 # Installation
 
-1. Have PHP installed
-2. Put `ai.php` somewhere
-3. Optionally add an alias to your `.bashrc` or `.bash_profile`
+1. Have Python 3 installed
+2. Put `ai.py` somewhere
+3. Copy `cmdline-ai-helper.sample` to `~/.cmdline-ai-helper` and fill in your provider, model and API keys. It supports Anthropic, OpenAI, Google and local ollama. 
+4. Optionally add an alias to your `.bashrc` or `.bash_profile`
 
 ```
-alias ai="php path/to/your/ai.php"
+alias ai="python path/to/your/ai.py"
 ```
-
-When it's first called, it creates a config file in `~/.php-cmdline-ai.config.json`. Edit this with your API keys and set your default provider and model. It supports Anthropic, OpenAI, Google and local ollama.
 
 Tested on macOS with bash.
 
