@@ -22,3 +22,5 @@ $ ai description of your command
 Press enter, wait. Then edit the resulting command, press Enter to execute, or ESC to cancel.
 
 Examples: https://hachyderm.io/@combatwombat/113765663832357137
+
+![example](https://sc.robsite.net/files/1737156248-Bildschirmfoto_2025-01-17_um_22.22.17.png)
