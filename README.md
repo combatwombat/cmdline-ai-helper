@@ -2,7 +2,7 @@ Generates command line commands from your description. Lets you edit and execute
 
 # Installation
 
-1. Have PHP installed)
+1. Have PHP installed
 2. Put `ai.php` somewhere
 3. Optionally add an alias to your `.bashrc` or `.bash_profile`
 
